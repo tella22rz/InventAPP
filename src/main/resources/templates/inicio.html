@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Inicio</title>
+<link th:href="@{/css/inicio.css}" rel="stylesheet">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+
+<script>
+	redirigirLogIn = function(){
+		console.log("ehhhhhhhhhhhhhhhhhhhhhhh");
+		$("#formLogIn").submit();
+	}
+</script>
+
+</head>
+
+<body>
+	<form id="formLogIn" name="formLogIn" th:action="@{/login}" method="GET">
+	</form>
+	
+	<div th:if="${session.usuario}" th:onclick="redirigirLogIn()"></div>
+	
+	<div class="container">
+		<h2 class="col-xs-12 col-sm-12" style="text-align: center;">InventAPP</h2>
+	    	<br>
+	    	<br>
+	    <div class="kpx_login">
+	        <div class="row kpx_row-sm-offset-3 kpx_socialButtons">
+	          <div class="col-xs-3 col-sm-3">
+	            <a th:href="@{'/articulos/mostrar'}" class="btn btn-lg btn-block kpx_btn-facebook" data-toggle="tooltip" data-placement="top" title="Facebook">
+	              
+	              <span class="hidden-xs">Mostrar Articulos</span>
+	            </a>
+	          </div>
+	          <div class="col-xs-3 col-sm-3">
+	            <a href="#" class="btn btn-lg btn-block kpx_btn-twitter" data-toggle="tooltip" data-placement="top" title="Twitter">
+	              
+	              <span class="hidden-xs">Mostrar Facturas</span>
+	            </a>
+	          </div> 
+	    	</div><br>
+	
+		    <div class="row kpx_row-sm-offset-3 kpx_socialButtons">
+	          <div class="col-xs-3 col-sm-3">
+	            <a href="#" class="btn btn-lg btn-block kpx_btn-facebook" data-toggle="tooltip" data-placement="top" title="Facebook">
+	              
+	              <span class="hidden-xs">Mostrar Clientes</span>
+	            </a>
+	          </div>
+	          <div class="col-xs-3 col-sm-3">
+	            <a href="#" class="btn btn-lg btn-block kpx_btn-twitter" data-toggle="tooltip" data-placement="top" title="Twitter">
+	              
+	              <span class="hidden-xs">Mostrar Proveedores</span>
+	            </a>
+	          </div> 
+	    	</div><br>
+	    	
+	    	<div class="row kpx_row-sm-offset-3 kpx_socialButtons">
+	          <div class="col-xs-3 col-sm-3">
+	            <a href="#" class="btn btn-lg btn-block kpx_btn-facebook" data-toggle="tooltip" data-placement="top" title="Facebook">
+	              
+	              <span class="hidden-xs">Mostrar Formas De Pago</span>
+	            </a>
+	          </div>
+	          <div class="col-xs-3 col-sm-3">
+	            <a href="#" class="btn btn-lg btn-block kpx_btn-twitter" data-toggle="tooltip" data-placement="top" title="Twitter">
+	              
+	              <span class="hidden-xs">Mostrar Usuarios</span>
+	            </a>
+	          </div> 
+	    	</div>
+	
+		</div>
+	</div>
+</body>
+
+</html>
